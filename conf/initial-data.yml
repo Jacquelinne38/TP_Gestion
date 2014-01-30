@@ -1,0 +1,11 @@
+#Test data.
+
+User(julia):
+        login: Julia
+        password: secret
+
+Product(TP1):
+        name: TP_HTML
+
+Product(TP2):
+        name: TP_CSS
