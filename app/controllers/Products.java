@@ -6,7 +6,7 @@ import play.mvc.*;
 import java.util.*;
 
 import models.*;
-
+@With(Secure.class)
 public class Products extends CRUD {
 	
 

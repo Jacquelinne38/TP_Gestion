@@ -1,5 +1,8 @@
 package controllers;
+import play.*;
+import play.mvc.*;
 
-public class Admin {
+@With(Secure.class)
+public class Admin extends CRUD{
 
 }

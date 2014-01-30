@@ -35,6 +35,12 @@ public class Note extends Model{
 
 	}
 	
+	public static List<Note> getNotesByUser(User user) {
+		return find("byUser", user).fetch();
+	}
 	
+	public static Note getNoteByUserAndProduct(User user, Product product) {
+		return find ("byUserAndProduct", user, product).first();
+	}
 
 }

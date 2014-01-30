@@ -1,7 +1,53 @@
 # you describe your data using the YAML notation here
 # and then load them using Fixtures.load("data.yml")
 
-# User(bob):
-#   email: bob@gmail.com
-#   password: secret
-#   fullname: Bob
+#Test data.
+
+User(julia):
+        login: Julia
+        password: julia
+
+User(noemie):
+        login: Noemie
+        password: noemie
+
+User(yannick):
+        login: Yannick
+        password: yannick
+
+User(samy):
+        login: Samy
+        password: samy
+
+Product(TP1):
+        name: TP_HTML
+
+Product(TP2):
+        name: TP_CSS
+
+Product(TP3):
+        name: TP_Javascript
+
+Product(TP4):
+        name: TP_Jquery
+
+Note(TP1Julia):
+        user: julia
+        product: TP1
+        note: 15
+
+Note(TP2Julia):
+        user: julia
+        product: TP2
+        note: 15
+        
+Note(TP3Noemie):
+        user: noemie
+        product: TP3
+        note: 15
+
+Note(TP4Yannick):
+        user: yannick
+        product: TP4
+        note: 15    
+        

@@ -21,5 +21,8 @@ public class Product extends Model {
 		return this.name;
 	}
 	
+	public Product getProductByName(String name) {
+		return find("byName", name).first();
+	}
 
 }
