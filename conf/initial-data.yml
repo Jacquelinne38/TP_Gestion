@@ -2,22 +2,33 @@
 # and then load them using Fixtures.load("data.yml")
 
 #Test data.
-
 User(julia):
-        login: Julia
+        name: julia
+        surname : surname
+        email : julia@julia.fr
         password: julia
+        isAdmin: true
 
 User(noemie):
-        login: Noemie
+        name: noemie
+        surname : surname
+        email : noemie@noemie.fr
         password: noemie
+        isAdmin: false
 
 User(yannick):
-        login: Yannick
+        name: yannick
+        surname : surname
+        email : yannick@yannick.fr
         password: yannick
+        isAdmin: false
 
 User(samy):
-        login: Samy
+        name: samy
+        surname : surname
+        email : sammy@sammy.fr
         password: samy
+        isAdmin: false
 
 Product(TP1):
         title: TP_HTML
@@ -28,18 +39,17 @@ Product(TP2):
         title: TP_CSS
         date : 2013-10-14
         coeff: 2
-	
+
 Product(TP3):
         title: TP_Javascript
         date : 2013-11-14
         coeff: 1
-        
 
 Product(TP4):
         title: TP_Jquery
         date : 2013-12-14
         coeff: 2
-        
+
 Note(TP1Julia):
         user: julia
         product: TP1
@@ -49,7 +59,7 @@ Note(TP2Julia):
         user: julia
         product: TP2
         note: 15
-        
+
 Note(TP3Noemie):
         user: noemie
         product: TP3
@@ -59,4 +69,3 @@ Note(TP4Yannick):
         user: yannick
         product: TP4
         note: 15    
-        

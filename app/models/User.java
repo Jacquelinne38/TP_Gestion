@@ -47,7 +47,7 @@ public class User extends Model {
         return find("byEmailAndPassword", login, password).first();
     }
 	
-	public User(String name, String surname, String email, String password) {
+	public User addUser(String name, String surname, String email, String password) {
 		return new User(name, surname, email, password).save();
 		
 	}
