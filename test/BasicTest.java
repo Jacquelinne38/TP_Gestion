@@ -13,17 +13,17 @@ public class BasicTest extends UnitTest {
         Fixtures.deleteDatabase();
     }
     
-    @Test
-	public void testNotes() {
-	    Fixtures.loadModels("data.yml");
-	    User u = User.connect("Julia", "julia");
-	    if (u == null) {
-	    	fail();
-	    }
-	    List<Note> list = Note.getNotesByUser(u);
-	    assertEquals(2, list.size());
-	    for (Note note: list) {
-	    	System.out.println("TP : " + note.product.title + " de : " + note.user.login + " note : " + note.note);
-	    }
-    }
+//    @Test
+//	public void testNotes() {
+//	    Fixtures.loadModels("data.yml");
+//	    User u = User.connect("Julia", "julia");
+//	    if (u == null) {
+//	    	fail();
+//	    }
+//	    List<Annotation> list = Annotation.getNotesByUser(u);
+//	    assertEquals(2, list.size());
+//	    for (Annotation annotation: list) {
+//	    	System.out.println("TP : " + annotation.product.title + " de : " + annotation.user.login + " note : " + annotation.note);
+//	    }
+    //}
 }

@@ -50,22 +50,29 @@ Product(TP4):
         date : 2013-12-14
         coeff: 2
 
-Note(TP1Julia):
-        user: julia
+Annotation(TP1Julia):
+        users:
+                 - julia
+                 - noemie
         product: TP1
         note: 15
-
-Note(TP2Julia):
-        user: julia
+        comment: >
+                 premier commentaire
+Annotation(TP2Julia):
+        users: 
+                - yannick
+                - samy
         product: TP2
         note: 15
+         comment: >
+                 second commentaire.
+#Annotation(TP3Vide):
+#        product: TP3
+#        note: 15
+#        comment: >
+#                  commentaire en cours.
 
-Note(TP3Noemie):
-        user: noemie
-        product: TP3
-        note: 15
-
-Note(TP4Yannick):
-        user: yannick
-        product: TP4
-        note: 15    
+#Annotation(TP4Yannick):
+#        user: yannick
+#        product: TP4
+#        note: 15    

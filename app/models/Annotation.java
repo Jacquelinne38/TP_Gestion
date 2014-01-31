@@ -5,41 +5,45 @@ import play.db.jpa.*;
 import play.data.validation.*;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
 @Table(uniqueConstraints=
            @UniqueConstraint(columnNames = {"Users", "Products"}))
-public class Note extends Model{
+public class Annotation extends Model{
 	
 	@Required
-	@ManyToOne
+	@ManyToMany(targetEntity=User.class)
 	@JoinColumn(name="Users")
-	public User user;
+	public List<User> users;
 	
 	@Required
-	@OneToOne 
+	@ManyToOne 
 	@JoinColumn(name="Products")
 	public Product product;
 //	
-	@Required
 	public int note;
 
-	public Note(User user, Product product, int note) {
-		this.user = user;
+	@Lob
+	public String comment;
+	
+	public Annotation(Product product, int note, String comment) {
+		this.users = new ArrayList<User>();
 		this.product = product;
 		this.note = note;
+		this.comment = comment;
 	}
 
-	public Note() {
+	public Annotation() {
 
 	}
 	
-	public static List<Note> getNotesByUser(User user) {
+	public static List<Annotation> getNotesByUser(User user) {
 		return find("byUser", user).fetch();
 	}
 	
-	public static Note getNoteByUserAndProduct(User user, Product product) {
+	public static Annotation getNoteByUserAndProduct(User user, Product product) {
 		return find ("byUserAndProduct", user, product).first();
 	}
 
