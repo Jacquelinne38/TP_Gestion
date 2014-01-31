@@ -8,13 +8,7 @@ User(julia):
         email : julia@julia.fr
         password: julia
         isAdmin: true
-
-User(noemie):
-        name: noemie
-        surname : surname
-        email : noemie@noemie.fr
-        password: noemie
-        isAdmin: false
+        login: julia
 
 User(yannick):
         name: yannick
@@ -22,13 +16,7 @@ User(yannick):
         email : yannick@yannick.fr
         password: yannick
         isAdmin: false
-
-User(samy):
-        name: samy
-        surname : surname
-        email : sammy@sammy.fr
-        password: samy
-        isAdmin: false
+        login: yannick
 
 Product(TP1):
         title: TP_HTML
@@ -53,7 +41,7 @@ Product(TP4):
 Annotation(TP1Julia):
         users:
                  - julia
-                 - noemie
+                 - yannick
         product: TP1
         note: 15
         comment: >
@@ -61,10 +49,10 @@ Annotation(TP1Julia):
 Annotation(TP2Julia):
         users: 
                 - yannick
-                - samy
+                - julia
         product: TP2
         note: 15
-         comment: >
+        comment: >
                  second commentaire.
 #Annotation(TP3Vide):
 #        product: TP3

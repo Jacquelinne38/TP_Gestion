@@ -5,6 +5,7 @@ import play.db.jpa.*;
 import play.data.validation.*;
 
 import javax.persistence.*;
+
 import java.util.*;
 
 @Entity
@@ -26,13 +27,17 @@ public class User extends Model {
 	@Required
 	public String password;
 
+	@Required
+	public String login;
+
 	public boolean isAdmin;
 
-	public User(String name, String surname, String email, String password) {
+	public User(String name, String surname, String email, String password, String login) {
 		this.name = name;
 		this.surname = surname;
 		this.email = email;
 		this.password = password;
+		this.login = login;
 	}
 	
 	
@@ -44,11 +49,11 @@ public class User extends Model {
 
 
 	public static User connect(String login, String password) {
-        return find("byEmailAndPassword", login, password).first();
+        return find("byLoginAndPassword", login, password).first();
     }
 	
-	public User addUser(String name, String surname, String email, String password) {
-		return new User(name, surname, email, password).save();
+	public User addUser(String name, String surname, String email, String password, String login) {
+		return new User(name, surname, email, password, login).save();
 		
 	}
 

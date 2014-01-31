@@ -9,12 +9,11 @@ import javax.persistence.*;
 import java.util.*;
 
 @Entity
-@Table(uniqueConstraints=
-           @UniqueConstraint(columnNames = {"Users", "Products"}))
+@Table(/*uniqueConstraints=
+           @UniqueConstraint(columnNames = {"Users", "Products"})*/)
 public class Annotation extends Model{
 	
-	@Required
-	@ManyToMany(targetEntity=User.class)
+	@ManyToMany
 	@JoinColumn(name="Users")
 	public List<User> users;
 	
@@ -23,12 +22,14 @@ public class Annotation extends Model{
 	@JoinColumn(name="Products")
 	public Product product;
 //	
-	public int note;
+	@Min(0)
+	@Max(20)
+	public double note;
 
 	@Lob
 	public String comment;
 	
-	public Annotation(Product product, int note, String comment) {
+	public Annotation(Product product, double note, String comment) {
 		this.users = new ArrayList<User>();
 		this.product = product;
 		this.note = note;

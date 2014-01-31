@@ -10,7 +10,7 @@ import models.*;
 
 @Check("admin")
 @With(Secure.class)
-public class Notes extends CRUD {
+public class Annotations extends CRUD {
 	
 
 }
