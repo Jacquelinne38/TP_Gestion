@@ -44,16 +44,16 @@ public class User extends Model {
 
 
 	public static User connect(String login, String password) {
-        return find("byLoginAndPassword", login, password).first();
+        return find("byEmailAndPassword", login, password).first();
     }
 	
-	public static User addUser(String login, String pass) {
-		return new User(login, pass).save();
+	public User(String name, String surname, String email, String password) {
+		return new User(name, surname, email, password).save();
 		
 	}
 
 	public String toString() {
-		return this.login;
+		return this.email;
 	}
 	
 	
