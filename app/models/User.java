@@ -15,15 +15,23 @@ import java.util.*;
 public class User extends Model {
 	
 	@Required
-	public String login;
-	
+	public String email;
+
+	@Required
+	public String name;
+
+	@Required
+	public String surname;
+
 	@Required
 	public String password;
 
 	public boolean isAdmin;
 
-	public User(String login, String password) {
-		this.login = login;
+	public User(String name, String surname, String email, String password) {
+		this.name = name;
+		this.surname = surname;
+		this.email = email;
 		this.password = password;
 	}
 	
