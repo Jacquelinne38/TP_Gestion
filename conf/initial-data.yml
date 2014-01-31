@@ -6,7 +6,6 @@ User(julia):
         name: julia
         surname : surname
         email : julia@julia.fr
-        password: julia
         isAdmin: true
         login: julia
 
@@ -14,7 +13,6 @@ User(yannick):
         name: yannick
         surname : surname
         email : yannick@yannick.fr
-        password: yannick
         isAdmin: false
         login: yannick
 
