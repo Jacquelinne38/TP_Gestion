@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-
 <html>
     <head>
         <title>#{get 'title' /}</title>
@@ -11,6 +9,8 @@
         #{get 'moreScripts' /}
     </head>
     <body>
+        <a href="@{Secure.logout()}">Log out</a>
         #{doLayout /}
     </body>
 </html>
+

@@ -31,5 +31,13 @@ public class Application extends Controller {
     	renderJSON(task);
 
     }
+
+    public static void getInfoUser() {
+        if(Security.isConnected()) {
+            User user = User.find("byLogin", Security.connected()).first();
+            renderArgs.put("user", user);
+        }
+
+    }
     
 }
