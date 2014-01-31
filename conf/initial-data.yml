@@ -1,20 +1,24 @@
 #Test data.
 
 User(julia):
-        login: Julia
+        login: julia
         password: julia
+        isAdmin: true
 
 User(noemie):
-        login: Noemie
+        login: noemie
         password: noemie
+        isAdmin: true
 
 User(yannick):
-        login: Yannick
+        login: yannick
         password: yannick
+        isAdmin: false
 
 User(samy):
-        login: Samy
+        login: samy
         password: samy
+        isAdmin: true
 
 Product(TP1):
         name: TP_HTML

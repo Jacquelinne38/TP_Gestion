@@ -20,6 +20,8 @@ public class User extends Model {
 	@Required
 	public String password;
 
+	public boolean isAdmin;
+
 	public User(String login, String password) {
 		this.login = login;
 		this.password = password;
