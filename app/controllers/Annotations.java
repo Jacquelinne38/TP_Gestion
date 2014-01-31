@@ -41,20 +41,22 @@ import play.utils.Java;
 @With(Secure.class)
 public class Annotations extends CRUD {
 	
-	public static void save(Long id, List<User> users, Product products, String comment) throws Exception {
+	public static void save(Long id, String comment) throws Exception {
         String note = request.params.allSimple().get("object.note");
+        String[] users = request.params.all().get("object.users.id");
+        String[] products = request.params.all().get("object.product.id");
         Annotation a;
         if(id != null) {
 			a = Annotation.findById(id);
 			notFoundIfNull(a);
         } else {
 			a = new Annotation();
-			a.users = users;
-			a.product = products;
+			//a.users = users;
+			//a.product = products;
 			a.comment = comment;
    		}
-   		if(note < 0 || note > 20) a.note = note;
-   		else a.note = "Non évalué";
+   		if(Double.valueOf(note) < 0 || Double.valueOf(note) > 20) a.note = "Non évalué";
+   		else a.note = note;
 
 	    if (validation.hasErrors()) {
 		    renderArgs.put("error", play.i18n.Messages.get("crud.hasErrors"));
