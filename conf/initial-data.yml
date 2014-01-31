@@ -10,11 +10,11 @@ User(julia):
         login: julia
 
 User(yannick):
-        name: yannick
+        name: ya
         surname : surname
         email : yannick@yannick.fr
         isAdmin: false
-        login: yannick
+        login: ya
 
 Product(TP1):
         title: TP_HTML

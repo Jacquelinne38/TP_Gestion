@@ -22,14 +22,13 @@ public class Annotation extends Model{
 	@JoinColumn(name="Products")
 	public Product product;
 //	
-	@Min(0)
-	@Max(20)
-	public double note;
+
+	public String note;
 
 	@Lob
 	public String comment;
 	
-	public Annotation(Product product, double note, String comment) {
+	public Annotation(Product product, String note, String comment) {
 		this.users = new ArrayList<User>();
 		this.product = product;
 		this.note = note;
