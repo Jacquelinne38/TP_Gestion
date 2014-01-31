@@ -12,5 +12,4 @@ import models.*;
 @With(Secure.class)
 public class Annotations extends CRUD {
 	
-
 }

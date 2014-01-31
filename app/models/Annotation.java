@@ -26,6 +26,7 @@ public class Annotation extends Model{
 	@Max(20)
 	public double note;
 
+	
 	@Lob
 	public String comment;
 	
@@ -41,7 +42,7 @@ public class Annotation extends Model{
 	}
 	
 	public static List<Annotation> getNotesByUser(User user) {
-		return find("byUser", user).fetch();
+		return find("select distinct a from Annotation a join a.users as u where u = ?", user).fetch();
 	}
 	
 	public static Annotation getNoteByUserAndProduct(User user, Product product) {

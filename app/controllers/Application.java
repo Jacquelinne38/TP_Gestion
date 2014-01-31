@@ -31,13 +31,39 @@ public class Application extends Controller {
     	renderJSON(task);
 
     }
-
+ 
     public static void getInfoUser() {
-        if(Security.isConnected()) {
+ request.params.allSimple();
+    	if(Security.isConnected()) {
             User user = User.find("byLogin", Security.connected()).first();
+            List<Annotation> listAnnotation = Annotation.getNotesByUser(user);
+            float moyenne = 0;
+            int taille = 0;
+            for(Annotation anno : listAnnotation) {
+            	//Double note = tryParseDouble(anno.note);
+            	Double note = anno.note;
+            	if (note != null) {
+            		moyenne += note * anno.product.coeff;
+            		taille += anno.product.coeff;
+            	}
+            }
+            moyenne /= taille;
+            int moyenneArrondi = Math.round(moyenne);
             renderArgs.put("user", user);
+            renderArgs.put("moyenne",moyenne);
+            renderArgs.put("moyenneArrondi", moyenneArrondi);
+            renderArgs.put("listAnno", listAnnotation);            
         }
+        render();
 
+    }
+    
+    private Double tryParseDouble(String s) {
+    	 try {
+    		 	return Double.parseDouble(s);
+    	 } catch (NumberFormatException ex) {
+    		 return null;
+    	}
     }
     
 }
