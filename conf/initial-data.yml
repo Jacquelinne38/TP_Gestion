@@ -1,37 +1,45 @@
+# you describe your data using the YAML notation here
+# and then load them using Fixtures.load("data.yml")
+
 #Test data.
 
 User(julia):
-        login: julia
+        login: Julia
         password: julia
-        isAdmin: true
 
 User(noemie):
-        login: noemie
+        login: Noemie
         password: noemie
-        isAdmin: true
 
 User(yannick):
-        login: yannick
+        login: Yannick
         password: yannick
-        isAdmin: false
 
 User(samy):
-        login: samy
+        login: Samy
         password: samy
-        isAdmin: true
 
 Product(TP1):
-        name: TP_HTML
+        title: TP_HTML
+        date : 2013-09-14
+        coeff: 1
 
 Product(TP2):
-        name: TP_CSS
-
+        title: TP_CSS
+        date : 2013-10-14
+        coeff: 2
+	
 Product(TP3):
-        name: TP_Javascript
+        title: TP_Javascript
+        date : 2013-11-14
+        coeff: 1
+        
 
 Product(TP4):
-        name: TP_Jquery
-
+        title: TP_Jquery
+        date : 2013-12-14
+        coeff: 2
+        
 Note(TP1Julia):
         user: julia
         product: TP1

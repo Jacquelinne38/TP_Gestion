@@ -14,15 +14,22 @@ import java.util.*;
 public class Product extends Model {
 	
 	@Required
-	public String name;
+	public String title;
+	
+	@Required
+	public Date date;
+	
+	@Required
+	public double coeff;
+	
 	
 
 	public String toString() {
-		return this.name;
+		return this.title;
 	}
 	
-	public Product getProductByName(String name) {
-		return find("byName", name).first();
+	public Product getProductByName(String title) {
+		return find("byTitle", title).first();
 	}
 
 }

@@ -23,7 +23,7 @@ public class BasicTest extends UnitTest {
 	    List<Note> list = Note.getNotesByUser(u);
 	    assertEquals(2, list.size());
 	    for (Note note: list) {
-	    	System.out.println("TP : " + note.product.name + " de : " + note.user.login + " note : " + note.note);
+	    	System.out.println("TP : " + note.product.title + " de : " + note.user.login + " note : " + note.note);
 	    }
     }
 }
