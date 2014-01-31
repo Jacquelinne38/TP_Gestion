@@ -6,9 +6,9 @@
 *       /                                       module:secure
 
 # Home page
-GET     /                                       Application.index2
+GET     /                                       Application.index
 GET 	/admin									module:crud
-GET     /UserInfo								Application.getInfoUser
+GET     /UserInfo								UserInfo.index
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
